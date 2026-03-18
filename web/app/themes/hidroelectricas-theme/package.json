@@ -1,0 +1,24 @@
+{
+  "name": "hidroelectricas-theme",
+  "version": "1.0.0",
+  "description": "[![Build Status](https://travis-ci.com/timber/starter-theme.svg?branch=master)](https://travis-ci.com/github/timber/starter-theme) [![Packagist Version](https://img.shields.io/packagist/v/upstatement/timber-starter-theme?include_prereleases)](https://packagist.org/packages/upstatement/timber-starter-theme)",
+  "main": "index.js",
+  "dependencies": {
+    "tailwindcss": "^4.2.0",
+		"@tailwindcss/postcss": "^4.2.0",
+    "swiper": "^12.0.3"
+  },
+  "devDependencies": {
+    
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}

@@ -15,9 +15,11 @@
 
 $context          = Timber::context();
 $context['posts'] = Timber::get_posts();
-$context['foo']   = 'bar';
-$templates        = array( 'index.twig' );
+$context['telefono'] = get_field('telefono', 'option');
+$context['direccion'] = get_field('direccion', 'option');
+$context['enlaces'] = get_field('enlaces', 'option');
+$templates        = array( '/templates/index.twig' );
 if ( is_home() ) {
-	array_unshift( $templates, 'front-page.twig', 'home.twig' );
+	array_unshift( $templates, '/templates/front-page.twig', '/templates/home.twig' );
 }
 Timber::render( $templates, $context );

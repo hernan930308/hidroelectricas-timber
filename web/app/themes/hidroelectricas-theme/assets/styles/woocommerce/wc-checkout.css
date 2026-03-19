@@ -1,0 +1,96 @@
+/* Checkout WooCommerce */
+
+.woocommerce-page .woocommerce-checkout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+  align-items: start;
+
+  @container (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Secciones del formulario */
+.woocommerce-page .woocommerce-billing-fields,
+.woocommerce-page .woocommerce-shipping-fields,
+.woocommerce-page .woocommerce-additional-fields {
+  & h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-dark);
+    margin-bottom: var(--space-lg);
+    padding-bottom: var(--space-sm);
+    border-bottom: 1px solid var(--wc-border);
+  }
+}
+
+/* Campos del formulario */
+.woocommerce-page .form-row {
+  margin-bottom: var(--space-md);
+
+  & label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: var(--space-xs);
+    color: var(--color-dark);
+
+    & .required {
+      color: var(--color-alert);
+    }
+  }
+
+  & input[type="text"],
+  & input[type="email"],
+  & input[type="tel"],
+  & select,
+  & textarea {
+    width: 100%;
+    padding: var(--space-sm) var(--space-md);
+    border: 1px solid var(--wc-border);
+    border-radius: 0.25rem;
+    font-family: var(--font-sans);
+
+    &:focus {
+      outline: none;
+      border-color: var(--color-blue-green);
+    }
+  }
+}
+
+/* Resumen del pedido */
+.woocommerce-page #order_review_heading {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-dark);
+  margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-sm);
+  border-bottom: 1px solid var(--wc-border);
+}
+
+.woocommerce-page .woocommerce-checkout-review-order-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: var(--space-lg);
+
+  & th,
+  & td {
+    padding: var(--space-sm) var(--space-md);
+    border-bottom: 1px solid var(--wc-border);
+    text-align: left;
+  }
+
+  & tfoot tr:last-child td,
+  & tfoot tr:last-child th {
+    font-weight: 700;
+    color: var(--color-blue-green);
+    font-size: 1.125rem;
+  }
+}
+
+/* Botón de pedido */
+.woocommerce-page #place_order {
+  width: 100%;
+  padding: var(--space-md) var(--space-xl);
+  font-size: 1.125rem;
+}

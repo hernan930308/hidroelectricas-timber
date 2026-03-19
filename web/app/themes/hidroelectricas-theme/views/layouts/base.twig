@@ -1,0 +1,77 @@
+{% block html_head_container %}
+	{% include 'partial/html-header.twig' %}
+	{% block head %}{% endblock %}
+</head>{% endblock %}<body class="{{ body_class }}" data-template="base.twig">
+{{ function('wp_body_open') }}
+<a class="skip-link screen-reader-text" href="#content">{{ _e('Skip to content') }}</a>
+
+<!-- Top bar -->
+<div class="w-full bg-[#d9dbd0] text-sm text-[#333]">
+	<div class="mx-auto flex items-center justify-center gap-4 px-5 py-1.5 md:justify-between wp-admin:max-w-full">
+		<ul class="flex items-center gap-2">
+			<li>
+				<a href="tel:{{ telefono['url'] }}" class="text-[#333] no-underline hover:underline">{{ telefono }}</a>
+			</li>
+			<li class="hidden md:inline">{{ direccion }}</li>
+		</ul>
+		<nav class="hidden items-center gap-2 md:flex" aria-label="Enlaces de navegación superior">
+			{% for enlace in enlaces %}
+				{% if not loop.first %}
+					<span class="select-none text-[#666]" aria-hidden="true">|</span>
+				{% endif %}
+				<a href="{{ enlace.enlace }}" class="text-[#333] no-underline hover:underline">{{ enlace.etiqueta }}</a>
+			{% endfor %}
+		</nav>
+	</div>
+</div>
+
+<header class="w-full flex items-center justify-between px-4 md:px-8 py-5 gap-4 lg:gap-8 border-b border-gray-100">
+	{% block header %}
+		<!-- Logo -->
+		<div role="banner">
+			<a href="{{ site.url }}" rel="home">
+				<img src="{{ function('get_template_directory_uri') }}/assets/img/logo.png" alt="{{ site.name }}"/>
+			</a>
+		</div>
+
+		{# Header Cart #}
+		<div>
+			<a href="{{ cart_url }}" title="Ver tu carrito de cotizacion">
+				<span>{{ function('wp_kses_data', function('sprintf', function('_n', '%d producto', '%d productos', cart_contents_count, 'hidroelectricas'), cart_contents_count)) }}</span>
+				&nbsp;para cotizar&nbsp;
+				<span class="material-symbols-outlined">shopping_cart</span>
+			</a>
+		</div>
+
+		{# Search #}
+		<div class="flex-1 max-w-4xl hidden md:block">
+			{{ function('get_product_search_form') }}
+		</div>
+
+		{# Hamburger menu #}
+		<div></div>
+	{% endblock %}
+</header>
+
+<section id="content" role="main" class="content-wrapper {% block content_class %}{% endblock %}">
+	{% if title %}
+		<h1>{{ title }}</h1>
+	{% endif %}
+	<div class="wrapper">
+		{% block content %}
+			Sorry, no content
+		{% endblock %}
+	</div>
+	{% if sidebar %}
+		<aside class="layout-sidebar">
+			{{ sidebar }}
+		</aside>
+	{% endif %}
+</section>
+
+{% block footer %}
+	<footer id="footer">
+		{% include 'partial/footer.twig' %}
+	</footer>
+	{{ function('wp_footer') }}
+{% endblock %}</body></html>

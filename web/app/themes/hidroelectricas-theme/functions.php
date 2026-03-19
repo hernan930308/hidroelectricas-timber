@@ -11,7 +11,12 @@ require_once __DIR__ . '/src/StarterSite.php';
 
 Timber\Timber::init();
 
+require_once 'inc/include.php';
+
 // Sets the directories (inside your theme) to find .twig files.
 Timber::$dirname = [ 'templates', 'views' ];
-
 new StarterSite();
+
+// timber integration woocommerce
+require_once 'src/WooCommerceTheme.php';
+( new WooCommerceTheme() )->init();

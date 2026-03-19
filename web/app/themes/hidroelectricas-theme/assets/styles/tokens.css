@@ -1,0 +1,38 @@
+/* tokens.css — sin @layer, disponibles globalmente */
+:root {
+  /* Colores del tema */
+  --color-green: #92b75e;
+  --color-blue-green: #376e72;
+  --color-dark: #232323;
+  --color-alert: #dc3232;
+  --color-topbar-bg: #d9dbd0;
+
+  /* Tipografía */
+  --font-sans: 'Neo Sans Pro', sans-serif;
+  --text-base: 1rem;
+  --leading-relaxed: 1.625;
+
+  /* Espaciado */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+
+  /* WooCommerce */
+  --wc-columns: 3;
+  --wc-gap: var(--space-lg);
+  --wc-card-radius: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --wc-columns: 2;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --wc-columns: 1;
+  }
+}

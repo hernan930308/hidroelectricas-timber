@@ -1,0 +1,51 @@
+/* 1. Declarar el orden de la cascada */
+@layer reset, tokens, base, components, layouts, woocommerce;
+
+/* 2. Tailwind (sigue funcionando para las plantillas propias) */
+@import "tailwindcss";
+
+/* 3. Tokens primero (disponibles en todos los layers) */
+@import "./tokens.css";
+
+/* 4. Base */
+@import "./base/fonts.css" layer(base);
+@import "./base/reset.css" layer(reset);
+@import "./base/typography.css" layer(base);
+
+/* 5. Componentes */
+@import "./components/header.css" layer(components);
+@import "./components/buttons.css" layer(components);
+@import "./components/forms.css" layer(components);
+
+/* 6. Layouts */
+@import "./layouts/containers.css" layer(layouts);
+
+/* 7. WooCommerce */
+@import "./woocommerce/wc-core.css" layer(woocommerce);
+@import "./woocommerce/wc-archive.css" layer(woocommerce);
+@import "./woocommerce/wc-single.css" layer(woocommerce);
+@import "./woocommerce/wc-checkout.css" layer(woocommerce);
+
+@theme {
+  --font-sans: 'Neo Sans Pro', sans-serif;
+
+  --color-green:   #92B75E;
+  --color-blue-green: #376E72;
+  --color-dark:  #232323;
+  --color-alert:     #dc3232;
+}
+
+@layer base {
+  h1 {
+    @apply text-4xl font-bold;
+  }
+  h2 {
+    @apply text-3xl font-bold text-blue-green;
+  }
+  h3 {
+    @apply text-2xl font-semibold;
+  }
+  p {
+    @apply text-base leading-relaxed;
+  }
+}

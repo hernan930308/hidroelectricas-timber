@@ -1,0 +1,22 @@
+.content-wrapper {
+  width: 100%;
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: var(--space-xl);
+  padding-block: var(--space-xl);
+}
+
+.wrapper {
+  width: 100%;
+}
+
+.layout-sidebar {
+  width: 100%;
+  max-width: 280px;
+}
+
+@media (max-width: 768px) {
+  .content-wrapper {
+    padding-inline: var(--space-md);
+  }
+}

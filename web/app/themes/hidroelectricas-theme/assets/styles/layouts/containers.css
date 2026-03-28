@@ -1,0 +1,25 @@
+.content-container {
+  width: 100%;
+  max-width: min(1280px, calc(100vw - var(--space-md)));
+  margin: var(--space-lg) auto;
+}
+
+.wrapper {
+  width: 100%;
+}
+
+.layout-sidebar {
+  width: 100%;
+  max-width: 280px;
+}
+
+.content-container{
+  width: calc(min(1140px, calc(100vw - var(--space-xl))));
+  margin: 0 auto;
+}
+
+.wide-container {
+  width: calc(min(1280px, calc(100vw - var(--space-xl))));
+  margin: 0 auto;
+}
+

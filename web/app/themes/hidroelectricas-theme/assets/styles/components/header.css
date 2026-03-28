@@ -1,0 +1,46 @@
+@media (min-width: 768px) {
+  .header {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+
+.logo, .hamburguer-menu {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .logo, .hamburguer-menu {
+    display: block;
+    flex-shrink: 0;
+  }
+
+  .search {
+    flex: .8;
+  }
+}
+
+.search {
+
+  padding: var(--space-md) 0;
+
+  .search__quotation-notice {
+    display: none;
+  }
+
+  form {
+    display: flex;
+    gap: var(--space-sm);
+    flex-wrap: nowrap;
+
+    button[type="submit"] {
+      padding-inline: var(--space-sm)!important;
+    }
+  }
+}
+
+

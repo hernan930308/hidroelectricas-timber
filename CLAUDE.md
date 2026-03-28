@@ -50,8 +50,9 @@ composer test          # Run PHPUnit tests
 
 The theme lives at `web/app/themes/hidroelectricas-theme/` and follows the Timber 2 starter pattern:
 
-- **`functions.php`** — bootstraps the theme by instantiating `StarterSite`
-- **`src/StarterSite.php`** — main theme class (`extends Timber\Site`). All hooks, context additions, Twig extensions, and theme-support registrations go here. Add custom post types in `register_post_types()` and taxonomies in `register_taxonomies()`.
+- **`functions.php`** — bootstraps the theme by instantiating `StarterSite` and `WooCommerceTheme`
+- **`src/StarterSite.php`** — main theme class (`extends Timber\Site`). theme hooks,theme context additions, Twig extensions, and theme-support registrations go here.
+- **`src/WooCommerceTheme`** — All woocommerce hooks, theme-support registrations for woocommerce.
 - **`*.php` template files** (index, single, page, archive, etc.) — thin WordPress template files that collect context and call `Timber::render('template.twig', $context)`
 - **`views/*.twig`** — Twig templates following the WordPress template hierarchy. `base.twig` is the layout parent; other templates extend it.
 - **`static/`** — front-end assets (CSS, JS); no build pipeline, managed manually.
@@ -64,4 +65,4 @@ Context shared across all templates is set in `StarterSite::add_to_context()` (e
 
 ### Environment configuration
 
-Copy `.env.example` to `.env` and set at minimum: `DB_*`, `WP_HOME`, `WP_SITEURL`, and the 8 WordPress security salts. `WP_ENV` controls which file in `config/environments/` is loaded.
+ `WP_ENV` controls which file in `config/environments/` is loaded.

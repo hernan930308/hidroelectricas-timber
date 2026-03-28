@@ -1,0 +1,12 @@
+{
+    "name": "acf/quickly-access",
+    "title": "Accesos rapidos",
+    "description": "accesos rapidos a grupos de productos",
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": ["categories", "block"],
+    "acf": {
+        "mode": "preview",
+        "renderCallback": "my_acf_block_render_callback"
+    }
+}

@@ -1,0 +1,116 @@
+/* Archivo de productos WooCommerce */
+
+.site .products {
+  display: grid;
+  grid-template-columns: repeat(var(--wc-columns), 1fr);
+  gap: var(--wc-gap);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site .products .product {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--wc-card-radius);
+  overflow: hidden;
+  background-color: #fff;
+  transition: box-shadow 0.2s ease;
+
+  &:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Card con borde si tiene imagen */
+  &:has(img) {
+    border: 1px solid color-mix(in srgb, var(--color-blue-green) 20%, transparent);
+  }
+
+  & a img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    display: block;
+  }
+
+  & .woocommerce-loop-product__title {
+    font-size: var(--text-base);
+    font-family: var(--font-sans);
+    font-weight: 600;
+    color: var(--color-dark);
+    padding: var(--space-md) var(--space-md) var(--space-xs);
+    margin: 0;
+  }
+
+  & .price {
+    display: block;
+    padding: 0 var(--space-md) var(--space-md);
+    color: var(--color-blue-green);
+    font-weight: 700;
+  }
+
+  & .button {
+    margin: 0 var(--space-md) var(--space-md);
+    width: calc(100% - var(--space-xl));
+  }
+}
+
+/* Cabecera del archivo */
+.site .woocommerce-products-header {
+  margin-bottom: var(--space-md);
+
+  & .page-title {
+    color: var(--color-dark);
+    margin-bottom: var(--space-sm);
+  }
+}
+
+/* Barra de resultados y ordenamiento */
+.site .woocommerce-result-count {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.site .woocommerce-ordering {
+  & select {
+    padding: var(--space-xs) var(--space-md);
+    border: 1px solid var(--wc-border);
+    border-radius: 0.25rem;
+    font-size: 0.875rem;
+    margin-bottom: var(--space-sm);
+  }
+}
+
+/* Paginación */
+.site .woocommerce-pagination {
+  margin-top: var(--space-xl);
+  display: flex;
+  justify-content: center;
+
+  & ul {
+    display: flex;
+    gap: var(--space-xs);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  & .page-numbers {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 0.25rem;
+    border: 1px solid var(--wc-border);
+    color: var(--color-dark);
+    text-decoration: none;
+
+    &.current,
+    &:hover {
+      background-color: var(--color-blue-green);
+      color: #fff;
+      border-color: var(--color-blue-green);
+    }
+  }
+}

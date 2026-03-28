@@ -1,0 +1,13 @@
+{
+    "name": "acf/cards-categories",
+    "title": "Categorias de Productos",
+    "description": "Muestra las categorias de los productos",
+    "style": [ "file:./my-block.css" ],
+    "category": "formatting",
+    "icon": "format-aside",
+    "keywords": ["categories", "block"],
+    "acf": {
+        "mode": "preview",
+        "renderCallback": "my_acf_block_render_callback"
+    }
+}

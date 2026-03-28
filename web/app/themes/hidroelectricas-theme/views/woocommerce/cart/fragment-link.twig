@@ -1,1 +1,4 @@
-<a class="cart-mini-contents" href="{{ fn('wc_get_cart_url') }}" title="{{ __('Ver carrito', 'hidroelectricas') }}"><span class="count">{{ cart.get_cart_contents_count }}</span></a>
+<a class="cart-mini-contents flex" href="{{ fn('wc_get_cart_url') }}" title="{{ __('Ver carrito', 'hidroelectricas') }}">
+  <span><img src="{{ function('get_template_directory_uri') }}/assets/icons/mini-cart.svg" alt="Carrito" /></span>
+  <span class="count bg-dark text-white text-xs text-center w-4 h-4 rounded-2xl">{{ cart.get_cart_contents_count }}</span>
+</a>

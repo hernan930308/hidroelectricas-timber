@@ -1,6 +1,6 @@
 /* Checkout WooCommerce */
 
-.woocommerce-page .woocommerce-checkout {
+.site .woocommerce-checkout {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--space-xl);
@@ -12,9 +12,9 @@
 }
 
 /* Secciones del formulario */
-.woocommerce-page .woocommerce-billing-fields,
-.woocommerce-page .woocommerce-shipping-fields,
-.woocommerce-page .woocommerce-additional-fields {
+.site .woocommerce-billing-fields,
+.site .woocommerce-shipping-fields,
+.site .woocommerce-additional-fields {
   & h3 {
     font-size: 1.25rem;
     font-weight: 600;
@@ -26,7 +26,7 @@
 }
 
 /* Campos del formulario */
-.woocommerce-page .form-row {
+.site .form-row {
   margin-bottom: var(--space-md);
 
   & label {
@@ -59,7 +59,7 @@
 }
 
 /* Resumen del pedido */
-.woocommerce-page #order_review_heading {
+.site #order_review_heading {
   font-size: 1.25rem;
   font-weight: 600;
   color: var(--color-dark);
@@ -68,7 +68,7 @@
   border-bottom: 1px solid var(--wc-border);
 }
 
-.woocommerce-page .woocommerce-checkout-review-order-table {
+.site .woocommerce-checkout-review-order-table {
   width: 100%;
   border-collapse: collapse;
   margin-bottom: var(--space-lg);
@@ -89,7 +89,7 @@
 }
 
 /* Botón de pedido */
-.woocommerce-page #place_order {
+.site #place_order {
   width: 100%;
   padding: var(--space-md) var(--space-xl);
   font-size: 1.125rem;

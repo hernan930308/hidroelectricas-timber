@@ -20,19 +20,13 @@
   --space-xl: 2rem;
 
   /* WooCommerce */
-  --wc-columns: 3;
+  --wc-columns: 2;
   --wc-gap: var(--space-lg);
   --wc-card-radius: 0.5rem;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   :root {
-    --wc-columns: 2;
-  }
-}
-
-@media (max-width: 480px) {
-  :root {
-    --wc-columns: 1;
+    --wc-columns: 3;
   }
 }

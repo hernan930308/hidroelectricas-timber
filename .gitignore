@@ -41,3 +41,10 @@ wp-cli.local.yml
 # Themes - ignore all except hidroelectricas-theme
 web/app/themes/*
 !web/app/themes/hidroelectricas-theme
+
+# Languages
+/web/app/languages
+
+# Claude
+.claude/settings.local.json
+.claude

@@ -39,13 +39,32 @@ class StarterSite extends Site
 	 */
 	public function enqueue_styles()
 	{
-		$main_stylesheet = '/dist/app.css';
+		$main_stylesheet = '/dist/styles/app.css';
+		$main_scripsheet = '/dist/js/app.js';
+		$swiper_style    = '/dist/js/app.css';
+		
 		wp_enqueue_style(
 			'app-css',
 			get_template_directory_uri() . $main_stylesheet,
 			[],
 			filemtime(get_template_directory() . $main_stylesheet)
 		);
+
+		wp_enqueue_style(
+			'swiper-css',
+			get_template_directory_uri() . $swiper_style,
+			[],
+			filemtime(get_template_directory() . $swiper_style)
+		);
+
+		wp_enqueue_script(
+			'app-js',
+			get_template_directory_uri() . $main_scripsheet,
+			[],
+			filemtime(get_template_directory() . $main_scripsheet)
+		);
+
+		wp_enqueue_script('font-awesome', "https://kit.fontawesome.com/8c58cb6971.js");
 	}
 
 	public function register_acf_blocks()
@@ -75,8 +94,11 @@ class StarterSite extends Site
 			'hide_empty' => true,
 			'parent'     => 0,
 		]);
-		$context['menu']  = Timber::get_menu();
-		$context['site']  = $this;
+		$context['menu']      = Timber::get_menu();
+		$context['site']      = $this;
+		$context['telefono']  = get_field('telefono', 'option');
+		$context['direccion'] = get_field('direccion', 'option');
+		$context['enlaces']   = get_field('enlaces', 'option');
 
 		return $context;
 	}

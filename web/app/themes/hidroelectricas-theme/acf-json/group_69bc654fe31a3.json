@@ -1,53 +1,11 @@
 {
-    "key": "group_69ba1506dd1c9",
-    "title": "Barra de contacto",
+    "key": "group_69bc654fe31a3",
+    "title": "Accesos rapidos",
     "fields": [
         {
-            "key": "field_69ba1507b2f7a",
-            "label": "telefono",
-            "name": "telefono",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": 3113891186,
-            "maxlength": "",
-            "allow_in_bindings": 0,
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
-            "key": "field_69ba1f53d9482",
-            "label": "direccion",
-            "name": "direccion",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "Calle 4 # 16-07",
-            "maxlength": "",
-            "allow_in_bindings": 0,
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
-            "key": "field_69ba20517c7fe",
-            "label": "enlaces",
-            "name": "enlaces",
+            "key": "field_69bc657f5c615",
+            "label": "accesos rapidos",
+            "name": "accesos_rapidos",
             "aria-label": "",
             "type": "repeater",
             "instructions": "",
@@ -67,7 +25,7 @@
             "rows_per_page": 20,
             "sub_fields": [
                 {
-                    "key": "field_69ba211b7b119",
+                    "key": "field_69bc659c5c616",
                     "label": "etiqueta",
                     "name": "etiqueta",
                     "aria-label": "",
@@ -86,10 +44,10 @@
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
-                    "parent_repeater": "field_69ba20517c7fe"
+                    "parent_repeater": "field_69bc657f5c615"
                 },
                 {
-                    "key": "field_69ba20817c7ff",
+                    "key": "field_69bc65ad5c617",
                     "label": "enlace",
                     "name": "enlace",
                     "aria-label": "",
@@ -105,7 +63,34 @@
                     "default_value": "",
                     "allow_in_bindings": 0,
                     "placeholder": "",
-                    "parent_repeater": "field_69ba20517c7fe"
+                    "parent_repeater": "field_69bc657f5c615"
+                },
+                {
+                    "key": "field_69bc68dfba672",
+                    "label": "icono",
+                    "name": "icono",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "",
+                    "allow_in_bindings": 0,
+                    "preview_size": "medium",
+                    "parent_repeater": "field_69bc657f5c615"
                 }
             ]
         }
@@ -113,9 +98,9 @@
     "location": [
         [
             {
-                "param": "options_page",
+                "param": "block",
                 "operator": "==",
-                "value": "site-contact-data"
+                "value": "acf\/quickly-access"
             }
         ]
     ],
@@ -129,5 +114,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1773926572
+    "modified": 1773955317
 }

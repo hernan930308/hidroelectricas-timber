@@ -1,9 +1,9 @@
 {
     "key": "ui_options_page_69ba14e611ae0",
-    "title": "Site Contact Data",
+    "title": "Barra de contacto",
     "active": true,
     "menu_order": 0,
-    "page_title": "Site Contact Data",
+    "page_title": "Barra de contacto",
     "menu_slug": "site-contact-data",
     "parent_slug": "none",
     "advanced_configuration": 0,
@@ -22,5 +22,5 @@
     "data_storage": "options",
     "post_id": "",
     "autoload": 0,
-    "modified": 1773802755
+    "modified": 1773926516
 }

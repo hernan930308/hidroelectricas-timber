@@ -1,16 +1,16 @@
 {% block html_head_container %}
 	{% include 'partial/html-header.twig' %}
 	{% block head %}{% endblock %}
-</head>{% endblock %}<body class="{{ body_class }}" data-template="base.twig">
+</head>{% endblock %}<body class="{{ body_class }} site" data-template="base.twig">
 {{ function('wp_body_open') }}
 <a class="skip-link screen-reader-text" href="#content">{{ _e('Skip to content') }}</a>
 
 <!-- Top bar -->
 <div class="w-full bg-[#d9dbd0] text-sm text-[#333]">
-	<div class="mx-auto flex items-center justify-center gap-4 px-5 py-1.5 md:justify-between wp-admin:max-w-full">
+	<div class="wide-container flex items-center justify-center gap-4 py-1.5 md:justify-between">
 		<ul class="flex items-center gap-2">
 			<li>
-				<a href="tel:{{ telefono['url'] }}" class="text-[#333] no-underline hover:underline">{{ telefono }}</a>
+				<a href="tel:{{ telefono }}" class="text-[#333] no-underline hover:underline">{{ telefono }}</a>
 			</li>
 			<li class="hidden md:inline">{{ direccion }}</li>
 		</ul>
@@ -25,38 +25,46 @@
 	</div>
 </div>
 
-<header class="w-full flex items-center justify-between px-4 md:px-8 py-5 gap-4 lg:gap-8 border-b border-gray-100">
+<header class="header wide-container">
 	{% block header %}
 		<!-- Logo -->
-		<div role="banner">
+		<div role="banner" class="logo">
 			<a href="{{ site.url }}" rel="home">
-				<img src="{{ function('get_template_directory_uri') }}/assets/img/logo.png" alt="{{ site.name }}"/>
+				<img src="{{ function('get_template_directory_uri') }}/assets/img/logo.png" alt="{{ site.name }}" class="max-w-[180px]"/>
 			</a>
 		</div>
 
-		{# Header Cart #}
-		<div>
-			<a href="{{ cart_url }}" title="Ver tu carrito de cotizacion">
-				<span>{{ function('wp_kses_data', function('sprintf', function('_n', '%d producto', '%d productos', cart_contents_count, 'hidroelectricas'), cart_contents_count)) }}</span>
-				&nbsp;para cotizar&nbsp;
-				<span class="material-symbols-outlined">shopping_cart</span>
-			</a>
+		<div
+			class="search">
+			{# Quotation notice #}
+			<div class="search__quotation-notice">
+				<a href="{{ cart_url }}" title="Ver tu carrito de cotizacion">
+					<span>{{ function('wp_kses_data', function('sprintf', function('_n', '%d producto', '%d productos', cart_contents_count, 'hidroelectricas'), cart_contents_count)) }}</span>
+					&nbsp;para cotizar&nbsp;
+				</a>
+			</div>
+
+			{# Search #}
+			<div class="search__form">
+				{{ function('get_product_search_form') }}
+			</div>
 		</div>
 
-		{# Search #}
-		<div class="flex-1 max-w-4xl hidden md:block">
-			{{ function('get_product_search_form') }}
-		</div>
+		{{ include('woocommerce/cart/fragment-link.twig') }}
 
 		{# Hamburger menu #}
-		<div></div>
+		<div class="hamburguer-menu">
+			<a href="">
+				<img src="{{ function('get_template_directory_uri') }}/assets/icons/hamburger-menu.svg" alt="{{ site.name }}"/>
+			</a>
+		</div>
+
+
 	{% endblock %}
 </header>
 
-<section id="content" role="main" class="content-wrapper {% block content_class %}{% endblock %}">
-	{% if title %}
-		<h1>{{ title }}</h1>
-	{% endif %}
+<section
+	id="content" role="main" class="content-container {% block content_class %}{% endblock %}">
 	<div class="wrapper">
 		{% block content %}
 			Sorry, no content
@@ -67,7 +75,7 @@
 			{{ sidebar }}
 		</aside>
 	{% endif %}
-</section>
+      </section>
 
 {% block footer %}
 	<footer id="footer">

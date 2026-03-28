@@ -1,1 +1,84 @@
-Copyright {{"now"|date('Y')}}
+<div class="bg-dark py-2">
+  <div class="wide-container">
+    <div class="text-white flex flex-col gap-8 md:flex-row">
+      <div class="flex flex-col gap-4 md:w-1/2">
+        <div>
+          <figure class="max-w-60">
+            <img src=" {{ theme.uri }}/assets/img/logo-white.png" alt="Logo" />
+          </figure>
+        </div>
+
+        <div>
+          <h3>Síguenos en redes sociales</h3>
+          {% include 'partial/social-menu.twig' %}
+        </div>
+
+        <div>
+          <h3>Contacto</h3>
+
+          <div class="flex flex-col gap-2">
+            <a class="text-white" href="tel:+573113891186">
+              <i class="fa-solid fa-phone fa-lg" style="color: #ffffff;"></i>
+              311 389 1186
+            </a>
+            <a class="text-white" href="mailto:hidroelectricasmarketing@gmail.com">
+              <i class="fa-solid fa-envelope" style="color: #ffffff;"></i>
+              hidroelectricasmarketing@gmail.com
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-4">
+        <div class="">
+          <h3 class="">Términos y condiciones</h3>
+          <div class="">
+            {# {% include 'menu-footer.twig' with {'items': menu_footer.get_items} %} #}
+          </div>
+        </div>
+        <div class="">
+          <h3 class="">Métodos de pago</h3>
+          <div class="flex gap-2">
+            <div class="">
+              <figure class="max-w-14 mb-1!">
+                <img src="{{ theme.uri }}/assets/img/logo-agrario.png" alt="Banco Agrario" />
+              </figure>
+              <p>Banco Agrario</p>
+            </div>
+            <div class="">
+              <figure class="max-w-14 mb-1!">
+                <img src="{{ theme.uri }}/assets/img/logo-bancolombia.png" alt="Bancolombia" />
+              </figure>
+              <p>Bancolombia</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-4">
+          <h3 class="">Certificaciones</h3>
+          <div class="flex items-end gap-2">
+            <div class="h-fit">
+              <figure class="max-w-14 mb-1!">
+                <img src="{{ theme.uri }}/assets/img/logo-retie.png" alt="Banco Agrario" />
+              </figure>
+              <p>Norma Retie</p>
+            </div>
+            <div class="h-fit">
+              <figure class="max-w-14 mb-1!">
+                <img src="{{ theme.uri }}/assets/img/logo-icontec.png" alt="Bancolombia" />
+              </figure>
+              <p>Normas Icontect</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="text-white mt-6">
+      Creado por
+      <a href="https://hernandario.dev/" target="_blank" rel="noopener noreferrer">Hernán Darío Burbano Sambony</a>
+      Copyright
+      {{ 'now'|date('Y') }}
+    </p>
+  </div>
+</div>

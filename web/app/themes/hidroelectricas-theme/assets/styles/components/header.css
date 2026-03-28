@@ -1,29 +1,46 @@
-.site-header {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: var(--space-md) var(--space-xl);
-  gap: var(--space-lg);
-  border-bottom: 1px solid #f3f4f6;
-}
-
-.site-topbar {
-  width: 100%;
-  background-color: var(--color-topbar-bg);
-  font-size: 0.875rem;
-  color: #333;
-}
-
-.site-topbar__inner {
-  margin-inline: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-md);
-  padding: 0.375rem var(--space-md);
-
-  @media (min-width: 768px) {
+@media (min-width: 768px) {
+  .header {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
     justify-content: space-between;
+    align-items: center;
   }
 }
+
+
+.logo, .hamburguer-menu {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .logo, .hamburguer-menu {
+    display: block;
+    flex-shrink: 0;
+  }
+
+  .search {
+    flex: .8;
+  }
+}
+
+.search {
+
+  padding: var(--space-md) 0;
+
+  .search__quotation-notice {
+    display: none;
+  }
+
+  form {
+    display: flex;
+    gap: var(--space-sm);
+    flex-wrap: nowrap;
+
+    button[type="submit"] {
+      padding-inline: var(--space-sm)!important;
+    }
+  }
+}
+
+

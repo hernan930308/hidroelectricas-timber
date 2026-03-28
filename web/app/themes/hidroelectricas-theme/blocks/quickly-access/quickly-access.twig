@@ -1,0 +1,20 @@
+<div class="w-full max-w-[min(400px,80vw)] mx-auto">
+	<div class="swiper quickly-access-swiper">
+		<div class="flex swiper-wrapper">
+			{% if fields %}
+				{% for item in fields.accesos_rapidos %}
+					<div class="swiper-slide">
+						<a href="{{ item.enlace }}" class="flex flex-col items-center gap-2 py-2">
+							<span>
+								<img class="max-w-16" src="{{ item.icono.url }}" alt="{{ item.etiqueta }}">
+							</span>
+							<span>{{ item.etiqueta }}</span>
+						</a>
+					</div>
+				{% endfor %}
+			{% endif %}
+		</div>
+		<div class="swiper-button-prev"></div>
+		<div class="swiper-button-next"></div>
+	</div>
+</div>

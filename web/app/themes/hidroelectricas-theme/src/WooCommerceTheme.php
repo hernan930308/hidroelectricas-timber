@@ -54,6 +54,8 @@ class WooCommerceTheme
         remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10);
 
         add_filter('woocommerce_add_to_cart_fragments', [$this, 'cart_link_fragment']);
+
+        // remove_action('woocommerce_cart_collaterals', 'woocommerce_cart_totals', 10);
     }
 
     /**

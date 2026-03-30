@@ -1,0 +1,116 @@
+/* Cart WooCommerce */
+
+/* ── Table ─────────────────────────────────────────────── */
+.site .woocommerce-cart-form .shop_table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: var(--space-xl);
+
+  & thead th {
+    padding: var(--space-sm) var(--space-md);
+    text-align: left;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-dark);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  & thead .product-remove,
+  & thead .product-thumbnail {
+    white-space: nowrap;
+  }
+
+  & tbody td {
+    padding: var(--space-xs) var(--space-sm);
+    vertical-align: middle;
+    text-align: left;
+    height: 100%;
+  }
+}
+
+/* ── Remove button ──────────────────────────────────────── */
+.site .woocommerce-cart-form .product-remove .remove {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  background-color: color-mix(in srgb, var(--color-alert) 10%, #fff);
+  color: var(--color-alert);
+  font-size: 1.125rem;
+  line-height: 1;
+  text-decoration: none;
+  transition: background-color 0.15s ease;
+
+  &:hover {
+    background-color: var(--color-alert);
+    color: #fff;
+  }
+}
+
+/* ── Thumbnail ──────────────────────────────────────────── */
+.site .woocommerce-cart-form .product-thumbnail {
+  & a img {
+    object-fit: cover;
+    display: block;
+    max-width: 48px;
+  }
+}
+
+/* ── Product name ───────────────────────────────────────── */
+.site .woocommerce-cart-form .product-name a {
+  color: var(--color-dark);
+  font-weight: 500;
+  text-decoration: none;
+
+  &:hover {
+    color: var(--color-blue-green);
+  }
+}
+
+.site .woocommerce-cart-form .product-name .variation {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-top: var(--space-xs);
+}
+
+/* ── Quantity input ─────────────────────────────────────── */
+.site .woocommerce-cart-form .product-quantity .qty {
+  width: 4.5rem;
+  padding: var(--space-xs) var(--space-sm);
+  border: 1px solid var(--wc-border);
+  border-radius: 0.25rem;
+  font-family: var(--font-sans);
+  text-align: center;
+
+  &:focus {
+    outline: none;
+    border-color: var(--color-blue-green);
+  }
+}
+
+/* ── Actions row ────────────────────────────────────────── */
+.site .woocommerce-cart-form .actions {
+  text-align: right;
+  padding-top: var(--space-md);
+  border-bottom: none;
+}
+
+/* ── Checkout button ────────────────────────────────────── */
+.site .cart-checkout {
+  margin-top: var(--space-xl);
+}
+
+.site .cart-checkout .checkout-button {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: var(--space-md) var(--space-xl);
+  font-size: 1.125rem;
+}
+
+.site .wc-proceed-to-checkout {
+  margin-bottom: var(--space-lg);
+}

@@ -25,6 +25,7 @@
 @import "./woocommerce/wc-archive.css" layer(woocommerce);
 @import "./woocommerce/wc-single.css" layer(woocommerce);
 @import "./woocommerce/wc-checkout.css" layer(woocommerce);
+@import "./woocommerce/wc-cart.css" layer(woocommerce);
 
 @theme {
   --font-sans: 'Neo Sans Pro', sans-serif;

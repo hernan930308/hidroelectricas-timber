@@ -21,7 +21,7 @@
     white-space: nowrap;
   }
 
-  & tbody td {
+  & .cart_item td {
     padding: var(--space-xs) var(--space-sm);
     vertical-align: middle;
     text-align: left;

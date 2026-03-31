@@ -55,7 +55,10 @@ class WooCommerceTheme
 
         add_filter('woocommerce_add_to_cart_fragments', [$this, 'cart_link_fragment']);
 
-        // remove_action('woocommerce_cart_collaterals', 'woocommerce_cart_totals', 10);
+        add_filter('woocommerce_checkout_fields', [$this, 'hidro_remove_checkout_fields']);
+
+        remove_action('woocommerce_checkout_order_review', 'woocommerce_order_review', 10);
+    
     }
 
     /**
@@ -106,5 +109,26 @@ class WooCommerceTheme
         );
 
         return $fragments;
+    }
+
+    public function hidro_remove_checkout_fields($fields)
+    {
+        $fields_to_remove = [
+            'billing_country',
+            'billing_address_1',
+            'billing_address_2',
+            'billing_postcode',
+            'billing_city',
+            'billing_company',
+            'billing_state',
+        ];
+
+        foreach ($fields_to_remove as $field) {
+            unset($fields['billing'][$field]);
+        }
+
+        $fields['billing']['billing_phone']['required'] = true;
+
+        return $fields;
     }
 }

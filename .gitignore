@@ -22,7 +22,6 @@ web/.htaccess
 
 # Composer
 /vendor
-auth.json
 
 # PHPUnit/Pest
 phpunit.xml

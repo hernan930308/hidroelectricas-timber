@@ -64,6 +64,7 @@
     "roots/wp-config": "1.0.0",
     "vlucas/phpdotenv": "^5.5",
     "wp-plugin/woocommerce": "10.6.1",
+    "wp-plugin/wp-mail-smtp": "4.7.1",
     "wpengine/advanced-custom-fields-pro": "*",
     "koodimonni/composer-dropin-installer": "dev-master",
     "koodimonni-plugin-language/woocommerce-es_co":"*"

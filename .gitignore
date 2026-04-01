@@ -22,7 +22,6 @@ web/.htaccess
 
 # Composer
 /vendor
-auth.json
 
 # PHPUnit/Pest
 phpunit.xml
@@ -50,3 +49,6 @@ web/app/themes/*
 .claude
 
 .vscode
+
+# ACF
+auth.json

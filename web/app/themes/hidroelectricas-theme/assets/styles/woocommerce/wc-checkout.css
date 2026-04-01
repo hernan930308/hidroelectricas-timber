@@ -100,3 +100,41 @@
   padding: var(--space-md) var(--space-xl);
   font-size: 1.125rem;
 }
+
+/* Thank you / Order received */
+.site .woocommerce-order {
+  & .woocommerce-notice--error {
+    margin-bottom: var(--space-lg);
+  }
+
+  & .woocommerce-thankyou-order-failed-actions {
+    display: flex;
+    gap: var(--space-md);
+    margin-top: var(--space-md);
+  }
+}
+
+.site .woocommerce-order-overview {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  gap: var(--space-md);
+  padding: var(--space-lg);
+  background-color: color-mix(in srgb, var(--color-blue-green) 8%, #fff);
+  border: 1px solid var(--wc-border);
+  border-radius: var(--wc-card-radius);
+  margin-top: var(--space-lg);
+
+  & li {
+    font-size: 0.875rem;
+    color: #6b7280;
+
+    & strong {
+      display: block;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--color-dark);
+      margin-top: var(--space-xs);
+    }
+  }
+}

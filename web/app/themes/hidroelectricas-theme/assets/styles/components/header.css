@@ -7,10 +7,6 @@
   gap: var(--space-md);
 }
 
-@media (min-width: 768px) {
-  .header {
-  }
-}
 
 .logo,
 .hamburguer-menu {
@@ -24,12 +20,12 @@
     flex-shrink: 0;
   }
 
-  .search {
+  .header__container .search {
     flex: 0.8;
   }
 }
 
-.search {
+.header__container .search {
   padding: var(--space-md) 0;
 
   .search__quotation-notice {

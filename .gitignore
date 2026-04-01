@@ -49,3 +49,6 @@ web/app/themes/*
 .claude
 
 .vscode
+
+# ACF
+auth.json

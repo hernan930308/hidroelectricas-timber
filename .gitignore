@@ -21,6 +21,7 @@ web/.htaccess
 !.env.example
 
 # Composer
+composer.lock
 /vendor
 
 # PHPUnit/Pest
@@ -52,5 +53,3 @@ web/app/themes/*
 
 # ACF
 auth.json
-
-.vscode

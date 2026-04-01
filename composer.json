@@ -43,6 +43,15 @@
     {
       "type": "composer",
       "url": "https://connect.advancedcustomfields.com"
+    },
+    {
+      "type": "composer",
+      "url": "https://wp-languages.github.io",
+      "only": [
+        "koodimonni-language/*",
+        "koodimonni-plugin-language/*",
+        "koodimonni-theme-language/*"
+      ]
     }
   ],
   "require": {
@@ -54,9 +63,10 @@
     "roots/wordpress": "6.9.4",
     "roots/wp-config": "1.0.0",
     "vlucas/phpdotenv": "^5.5",
-    "wp-theme/storefront": "*",
     "wp-plugin/woocommerce": "10.6.1",
-    "wpengine/advanced-custom-fields-pro": "*"
+    "wpengine/advanced-custom-fields-pro": "*",
+    "koodimonni/composer-dropin-installer": "dev-master",
+    "koodimonni-plugin-language/woocommerce-es_co":"*"
   },
   "require-dev": {
     "laravel/pint": "^1.27",
@@ -67,8 +77,9 @@
     "preferred-install": "dist",
     "allow-plugins": {
       "composer/installers": true,
-      "roots/wordpress-core-installer": true,
-      "pestphp/pest-plugin": true
+      "koodimonni/composer-dropin-installer": true,
+      "pestphp/pest-plugin": true,
+      "roots/wordpress-core-installer": true
     },
     "sort-packages": true
   },
@@ -84,6 +95,17 @@
       ],
       "web/app/themes/{$name}/": [
         "type:wordpress-theme"
+      ]
+    },
+    "dropin-paths": {
+      "web/app/languages/": [
+        "vendor:koodimonni-language"
+      ],
+      "web/app/languages/plugins/": [
+        "vendor:koodimonni-plugin-language"
+      ],
+      "web/app/languages/themes/": [
+        "vendor:koodimonni-theme-language"
       ]
     },
     "wordpress-install-dir": "web/wp"

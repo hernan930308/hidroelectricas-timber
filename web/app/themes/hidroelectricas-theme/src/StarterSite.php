@@ -10,10 +10,9 @@ class StarterSite extends Site
 	public function __construct()
 	{
 		add_action('after_setup_theme', array($this, 'theme_supports'));
-		add_action('init', array($this, 'register_post_types'));
-		add_action('init', array($this, 'register_taxonomies'));
 		add_action('wp_enqueue_scripts', [$this, 'enqueue_styles']);
 		add_action('init', [$this, 'register_acf_blocks']);
+		// add styles to admin wordpress
 		add_action('admin_init', [$this, 'juniper_editor_styles'], 1000);
 
 		add_filter('timber/context', array($this, 'add_to_context'));
@@ -24,17 +23,6 @@ class StarterSite extends Site
 	}
 
 	/**
-	 * This is where you can register custom post types.
-	 */
-	public function register_post_types() {}
-
-	/**
-	 * This is where you can register custom taxonomies.
-	 */
-	public function register_taxonomies() {}
-
-
-	/**
 	 * This enqueues theme styles.
 	 */
 	public function enqueue_styles()
@@ -42,7 +30,7 @@ class StarterSite extends Site
 		$main_stylesheet = '/dist/styles/app.css';
 		$main_scripsheet = '/dist/js/app.js';
 		$swiper_style    = '/dist/js/app.css';
-		
+
 		wp_enqueue_style(
 			'app-css',
 			get_template_directory_uri() . $main_stylesheet,

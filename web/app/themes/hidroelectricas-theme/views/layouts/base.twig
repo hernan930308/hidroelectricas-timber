@@ -25,14 +25,19 @@
 	</div>
 </div>
 
-<header class="header wide-container">
-	{% block header %}
+<header class="header bg-white" id="site-header">
+	<div class="header__container wide-container">
+		{% block header %}
 		<!-- Logo -->
 		<div role="banner" class="logo">
 			<a href="{{ site.url }}" rel="home">
-				<img src="{{ function('get_template_directory_uri') }}/assets/img/logo.png" alt="{{ site.name }}" class="max-w-[180px]"/>
+				<img src="{{ function('get_template_directory_uri') }}/assets/img/logo.png" alt="{{ site.name }}" class="max-w-45"/>
 			</a>
 		</div>
+
+		<a class="md:hidden" href="{{ site.url }}" rel="home">
+			<img src="{{ function('get_template_directory_uri') }}/assets/icons/home.svg" alt="{{ site.name }}" class="max-w-45"/>
+		</a>
 
 		<div
 			class="search">
@@ -50,17 +55,16 @@
 			</div>
 		</div>
 
-		{{ include('woocommerce/cart/fragment-link.twig') }}
-
 		{# Hamburger menu #}
-		<div class="hamburguer-menu">
+		<div class="hamburguer-menu flex gap-2 md:gap-4">
+			{{ include('woocommerce/cart/fragment-link.twig') }}
+
 			<a href="">
 				<img src="{{ function('get_template_directory_uri') }}/assets/icons/hamburger-menu.svg" alt="{{ site.name }}"/>
 			</a>
 		</div>
-
-
 	{% endblock %}
+	</div>
 </header>
 
 <section

@@ -136,9 +136,7 @@ class WooCommerceTheme
     public function hidro_custom_policy_text(string $text, string $type): string
     {
         if ($type === 'checkout') {
-            $url = get_permalink(get_page_by_path('politica-de-tratamiento-de-datos-personales'));
-
-            return 'Todos tus datos serán procesados de acuerdo a nuestra <a href="' . esc_url($url) . '" target="_blank" rel="noopener noreferrer">Política de tratamiento de datos personales</a>.';
+            return esc_html('Todos tus datos serán procesados de acuerdo a nuestra Política de tratamiento de datos personales, la cuál puedes leer a continuación.');
         }
 
         return $text;

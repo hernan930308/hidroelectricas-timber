@@ -13,7 +13,7 @@ class StarterSite extends Site
 		add_action('wp_enqueue_scripts', [$this, 'enqueue_styles']);
 		add_action('init', [$this, 'register_acf_blocks']);
 		// add styles to admin wordpress
-		add_action('admin_init', [$this, 'hdbs_editor_styles'], 1000);
+		add_action('admin_init', [$this, 'hidro_editor_styles'], 1000);
 
 		add_filter('timber/context', array($this, 'add_to_context'));
 
@@ -146,7 +146,7 @@ class StarterSite extends Site
 		add_theme_support('editor-styles');
 	}
 
-	function hdbs_editor_styles()
+	function hidro_editor_styles()
 	{
 		add_editor_style(get_template_directory_uri() .  '/dist/styles/app.css');
 	}

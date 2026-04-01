@@ -58,7 +58,8 @@ class WooCommerceTheme
         add_filter('woocommerce_checkout_fields', [$this, 'hidro_remove_checkout_fields']);
 
         remove_action('woocommerce_checkout_order_review', 'woocommerce_order_review', 10);
-    
+        
+        add_filter('woocommerce_get_privacy_policy_text', [$this, 'hidro_custom_policy_text'], 10, 2);
     }
 
     /**
@@ -130,5 +131,16 @@ class WooCommerceTheme
         $fields['billing']['billing_phone']['required'] = true;
 
         return $fields;
+    }
+
+    public function hidro_custom_policy_text(string $text, string $type): string
+    {
+        if ($type === 'checkout') {
+            $url = get_permalink(get_page_by_path('politica-de-tratamiento-de-datos-personales'));
+
+            return 'Todos tus datos serán procesados de acuerdo a nuestra <a href="' . esc_url($url) . '" target="_blank" rel="noopener noreferrer">Política de tratamiento de datos personales</a>.';
+        }
+
+        return $text;
     }
 }

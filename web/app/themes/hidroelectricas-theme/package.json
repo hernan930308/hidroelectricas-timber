@@ -16,7 +16,7 @@
   },
   "scripts": {
     "build": "parcel build assets/styles/app.css assets/js/app.js --public-url ./",
-    "dev": "parcel watch assets/styles/app.css assets/js/app.js --public-url ./ --no-source-maps",
+    "dev": "parcel watch assets/styles/app.css assets/js/app.js --public-url ./  --cache-dir .parcel-cache --no-source-maps",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

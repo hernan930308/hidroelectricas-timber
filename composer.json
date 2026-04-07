@@ -57,17 +57,18 @@
   "require": {
     "php": ">=8.3",
     "composer/installers": "^2.2",
+    "koodimonni-plugin-language/woocommerce-es_co": "*",
+    "koodimonni/composer-dropin-installer": "dev-master",
     "oscarotero/env": "^2.1",
     "roots/bedrock-autoloader": "^1.0",
     "roots/bedrock-disallow-indexing": "^2.0",
     "roots/wordpress": "6.9.4",
     "roots/wp-config": "1.0.0",
     "vlucas/phpdotenv": "^5.5",
+    "wp-plugin/litespeed-cache": "^7.8",
     "wp-plugin/woocommerce": "10.6.1",
     "wp-plugin/wp-mail-smtp": "4.7.1",
-    "wpengine/advanced-custom-fields-pro": "*",
-    "koodimonni/composer-dropin-installer": "dev-master",
-    "koodimonni-plugin-language/woocommerce-es_co":"*"
+    "wpengine/advanced-custom-fields-pro": "*"
   },
   "require-dev": {
     "laravel/pint": "^1.27",

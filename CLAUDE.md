@@ -101,3 +101,9 @@ WooCommerce templates live in `views/woocommerce/` (Twig files mirror the WooCom
 - The post and news text would be enter a content-container.
 - Onli specific sections have full wide.
 - Use Tailwind, except for WooCommerce templates, because to avoid recreating full templates as much as possible, the redesign is done through strategic WooCommerce classes.
+
+## Git flow 
+When prompted to `start git feature finished` flow, do the following:
+
+Run 
+``` git add .```. Then create a commit with ```git commit -m "feat: short phrase describing the changes in the last commit"```, After that, merge from `qa` to the `feature/feature-finished` branch.

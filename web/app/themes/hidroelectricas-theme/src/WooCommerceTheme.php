@@ -138,7 +138,7 @@ class WooCommerceTheme
     public function hidro_pagination_args(array $args): array
     {
         $args['end_size'] = 1;
-        $args['mid_size'] = 1;
+        $args['mid_size'] = 0;
         $args['prev_text'] = '&lsaquo;';
         $args['next_text'] = '&rsaquo;';
 

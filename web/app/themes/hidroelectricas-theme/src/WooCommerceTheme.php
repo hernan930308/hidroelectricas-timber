@@ -60,6 +60,8 @@ class WooCommerceTheme
         remove_action('woocommerce_checkout_order_review', 'woocommerce_order_review', 10);
         
         add_filter('woocommerce_get_privacy_policy_text', [$this, 'hidro_custom_policy_text'], 10, 2);
+
+        add_filter('woocommerce_pagination_args', [$this, 'hidro_pagination_args']);
     }
 
     /**
@@ -131,6 +133,16 @@ class WooCommerceTheme
         $fields['billing']['billing_phone']['required'] = true;
 
         return $fields;
+    }
+
+    public function hidro_pagination_args(array $args): array
+    {
+        $args['end_size'] = 1;
+        $args['mid_size'] = 0;
+        $args['prev_text'] = '&lsaquo;';
+        $args['next_text'] = '&rsaquo;';
+
+        return $args;
     }
 
     public function hidro_custom_policy_text(string $text, string $type): string
